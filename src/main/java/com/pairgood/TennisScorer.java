@@ -14,8 +14,11 @@ public class TennisScorer {
         return serverScore;
     }
 
-    public int getReceiverScore() {
-        return receiverScore;
+    public String getReceiverScore() {
+        if(receiverScore > 40){
+            return "A";
+        }
+        return Integer.toString(receiverScore);
     }
 
     public void serverWon() {
