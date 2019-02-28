@@ -2,6 +2,7 @@ package com.pairgood;
 
 public class TennisScorer {
 
+    public final static int ADVANTAGE = 41;
     private int serverScore;
     private int receiverScore;
 
@@ -10,8 +11,11 @@ public class TennisScorer {
         this.receiverScore = receiverScore;
     }
 
-    public int getServerScore() {
-        return serverScore;
+    public String getServerScore() {
+        if(serverScore > 40){
+            return "A";
+        }
+        return Integer.toString(serverScore);
     }
 
     public String getReceiverScore() {
@@ -30,6 +34,10 @@ public class TennisScorer {
     }
 
     public void receiverWon() {
-        receiverScore += 15;
+        if(serverScore > 40){
+            serverScore = 40;
+        }else {
+            receiverScore += 15;
+        }
     }
 }
