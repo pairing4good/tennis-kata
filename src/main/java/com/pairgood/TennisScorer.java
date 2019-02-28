@@ -19,7 +19,11 @@ public class TennisScorer {
     }
 
     public void serverWon() {
-        serverScore += 15;
+        if(serverScore == 30){
+            serverScore += 10;
+        }else{
+            serverScore += 15;
+        }
     }
 
     public void receiverWon() {
